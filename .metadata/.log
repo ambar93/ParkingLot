@@ -1,0 +1,44 @@
+!SESSION 2017-09-25 19:26:10.070 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IN
+Framework arguments:  -product org.eclipse.epp.package.jee.product -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product -data C:\Users\amaini\ParkingLot\ParkingLot -product org.eclipse.epp.package.jee.product
+
+!ENTRY com.perforce.team.core 2 0 2017-09-25 19:26:22.888
+!MESSAGE unable to get manifest version attribute: Not running from jar file: bundleresource://930.fwk647111342:3/com/perforce/p4java/Metadata.class
+
+!ENTRY com.perforce.team.core 2 0 2017-09-25 19:26:22.907
+!MESSAGE unable to get manifest date attribute: Not running from jar file: bundleresource://930.fwk647111342:3/com/perforce/p4java/Metadata.class
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.914
+!MESSAGE P4Java server factory loaded; version: Internal 2010.1 Perforce Development; date: unknown
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.921
+!MESSAGE Using default charset: windows-1252; JVM charset: windows-1252
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.932
+!MESSAGE Checking this Java for symbolic link support...
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.941
+!MESSAGE It seems this Java supports symbolic links.
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.948
+!MESSAGE Symbolic link support at the OS level will be determined at runtime...
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.955
+!MESSAGE initializing system file command helper class: java.io.File
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.963
+!MESSAGE Using default RPC system file command helper: com.perforce.p4java.impl.mapbased.rpc.sys.helper.RpcSystemFileCommandsHelper
+
+!ENTRY com.perforce.team.core 1 0 2017-09-25 19:26:22.970
+!MESSAGE setting RPC system file helper to class com.perforce.team.core.p4java.P4JavaSysFileCommandsHelper
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-09-25 19:26:29.818
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\amaini'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
