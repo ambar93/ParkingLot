@@ -1,0 +1,22 @@
+package parkingLot.com.parkingLot;
+
+public class ParkingLotUtil {
+	
+	//Create ParkingLot
+	
+	//Allot slot 
+	// getMinimumSlot()
+	// Allot(String carobj , slotId)
+	
+	
+	//Leave slot
+	// leave(slotId)
+	
+	//ListOfRegNums(String color)
+	
+	//getSlots(String color)
+	
+	
+	
+
+}

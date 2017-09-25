@@ -1,0 +1,126 @@
+package parkingLot.com.parkingLot;
+
+import java.util.List;
+
+public class ParkingLotUtil {
+	
+	//Create ParkingLot
+	
+	//Allot slot 
+	// getMinimumSlot()
+	// Allot(String carobj , slotId)
+	
+	
+	//Leave slot
+	// leave(slotId)
+	
+	//ListOfRegNums(String color)
+	
+	//getSlotId(String regNum)
+	
+	//getSlots(String color)
+	Car slots[] = null;
+	CartoColorDictionary ccd = new CartoColorDictionary();
+	
+	public void createParkingLot(int size){
+		slots = new Car[size+1];
+	}
+	
+	public int getMinimumSlot()
+	{
+		int i;
+		for( i = 1 ; i< slots.length;i++)
+		{
+			if(slots[i]== null)
+				break;
+		}
+		
+		if(i >= slots.length)
+			return -1;
+		
+		else 
+			return i;
+	}
+	
+	public boolean Allot(String color ,String regNum , int slotId)
+	{
+		try{
+		Car car = new Car(color,regNum,slotId);
+		slots[slotId] = car;
+		ccd.addIntoMap(car);
+		 return true;		
+		}
+		catch(Exception e)
+		{
+		 return false;
+		}
+	    
+	}
+	
+	public boolean Leave(int slotId)
+	{
+		if(slotId > slots.length)
+			return false;
+		
+		else if(slots[slotId]==null)
+			return true;
+		
+		else
+		{
+			Car car = slots[slotId];
+			ccd.removeFromMap(car);
+			slots[slotId] = null;
+			return true;
+		}
+		
+			
+	}
+	//ListOfRegNums(String color)
+
+	public List<String> getListRegNo(String color)
+	{
+		List<String> RegList = ccd.getRegNo(color);
+		return RegList;
+			
+			
+	}
+	
+	//getSlotId(String regNum)
+
+	public int getSlotId(String regNum)
+	{
+		for(Car c : slots)
+		{
+			if(c != null)
+			{
+				String num = c.getRegNum();
+				if(regNum.equals(num))
+				{
+					return c.getSlotId();
+				}
+			}
+		}
+		return -1;
+	}
+	//getSlots(String color)
+	
+	public List<Integer> getSlots(String color)
+	{
+		List<Integer> slotlist = ccd.getSlotId(color);
+		return slotlist;
+	}
+	
+	public void status()
+	{
+		System.out.println("Slot No."+"\tRegistration No.\tColour");
+		for(Car c : slots)
+		{
+			if(c != null)
+			System.out.println(c.getSlotId()+"\t"+c.getRegNum()+"\t"+c.getColor());
+		}
+	}
+	
+	
+	
+
+}

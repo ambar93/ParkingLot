@@ -1,0 +1,54 @@
+package parkingLot.com.parkingLot;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ * Hello world!
+ *
+ */
+public class App {
+	public static void main( String[] args )
+    {
+    	BufferedReader br = null;
+    	  FileReader fr = null;
+
+    	  try {
+
+    	   Scanner sc = new Scanner(System.in);
+    	   String file = sc.next();
+    	   fr = new FileReader(file);
+    	   br = new BufferedReader(fr);
+
+    	   String sCurrentLine;
+
+    	   while ((sCurrentLine = br.readLine()) != null) {
+    		   String inputs[]= sCurrentLine.split(" ");
+    	    
+    	   }
+
+    	  } catch (IOException e) {
+
+    	   e.printStackTrace();
+
+    	  } finally {
+
+    	   try {
+
+    	    if (br != null)
+    	     br.close();
+
+    	    if (fr != null)
+    	     fr.close();
+
+    	   } catch (IOException ex) {
+
+    	    ex.printStackTrace();
+
+    	   }
+    }
+    
+}
+}

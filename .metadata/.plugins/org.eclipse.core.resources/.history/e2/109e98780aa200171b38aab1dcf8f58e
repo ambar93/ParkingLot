@@ -1,0 +1,63 @@
+package parkingLot.com.parkingLot;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class CartoColorDictionary {
+
+	static HashMap<String, List<Car>> CColorMap = new HashMap();
+
+	public void addCar(Car car) {
+		String color = car.getColor();
+	}
+
+	public void addIntoMap(String color, Car car) {
+
+		List<Car> carlist = null;
+		if (CColorMap.containsKey(color)) {
+			carlist = CColorMap.get(color);
+			carlist.add(car);
+			CColorMap.put(color, carlist);
+		} else {
+			carlist = new ArrayList();
+			carlist.add(car);
+			CColorMap.put(color, carlist);
+		}
+	}
+
+	public void removeFromMap(Car car) {
+		List<Car> carlist = null;
+		String color = car.getColor();
+		carlist = CColorMap.get(color);
+		carlist.remove(car);
+
+	}
+
+	public List<String> getRegNo(String color)
+	{
+		List<String> RegList=null;
+		if(CColorMap.containsKey(color)){
+	     
+		 List<Car> carlist = CColorMap.get(color);
+		 for(int index=0;index<carlist.size();index++)
+		 RegList.add(carlist.get(index).getColor());
+		 
+		}
+		return RegList;	
+	}
+
+	public List<Integer> getSlotId(String color) {
+		
+		List<Integer> SlotIds = null;
+		if(CColorMap.containsKey(color)){
+			List<Car> carlist = CColorMap.get(color);
+			for(Car c : carlist)
+			{
+				getSlotId.add(c.getSlotId());
+			}
+		}
+		return SlotIds;
+	}
+
+}

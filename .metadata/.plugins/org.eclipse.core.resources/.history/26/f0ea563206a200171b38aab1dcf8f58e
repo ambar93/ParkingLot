@@ -1,0 +1,88 @@
+package parkingLot.com.parkingLot;
+
+import java.util.List;
+
+public class ParkingLotUtil {
+	
+	//Create ParkingLot
+	
+	//Allot slot 
+	// getMinimumSlot()
+	// Allot(String carobj , slotId)
+	
+	
+	//Leave slot
+	// leave(slotId)
+	
+	//ListOfRegNums(String color)
+	
+	//getSlotId(String regNum)
+	
+	//getSlots(String color)
+	Car slots[] = null;
+	CartoColorDictionary ccd = new CartoColorDictionary();
+	
+	public void createParkingLot(int size){
+		slots = new Car[size];
+	}
+	
+	public int getMinimumSlot()
+	{
+		int i;
+		for( i = 1 ; i<= slots.length;i++)
+		{
+			if(slots[i]== null)
+				break;
+		}
+		
+		if(i > slots.length)
+			return -1;
+		
+		else 
+			return i;
+	}
+	
+	public boolean Allot(String color ,String regNum , int slotId)
+	{
+		try{
+		Car car = new Car(color,regNum,slotId);
+		slots[slotId] = car;
+		ccd.addCar(car);
+		 return true;		
+		}
+		catch(Exception e)
+		{
+		 return false;
+		}
+	    
+	}
+	
+	public boolean Leave(int slotId)
+	{
+		if(slotId > slots.length)
+			return false;
+		
+		else if(slots[slotId]==null)
+			return true;
+		
+		else
+		{
+			Car car = slots[slotId];
+			ccd.removeFromMap(car);
+			slots[slotId] = null;
+			return true;
+		}
+		
+			
+	}
+	//ListOfRegNums(String color)
+
+	public List<Integer> getListRegNo(String color)
+	{
+		return ccd.getList(color);
+	}
+	
+	
+	
+
+}

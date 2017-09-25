@@ -1,0 +1,31 @@
+package parkingLot.com.parkingLot;
+
+public class Car {
+
+	private String color;
+	private String RegNum;
+	private int slotId;
+	
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	
+	public int getSlotId() {
+		return slotId;
+	}
+	public void setSlotId(int slotId) {
+		this.slotId = slotId;
+	}
+	
+	public String getRegNum() {
+		return RegNum;
+	}
+	public void setRegNum(String regNum) {
+		RegNum = regNum;
+	}
+	
+	
+}
