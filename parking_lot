@@ -1,0 +1,4 @@
+cd com.parkingLot/
+mvn compile
+mvn test
+mvn exec:java -Dexec.mainClass=parkingLot.com.parkingLot.App -Dexec.args=$1
