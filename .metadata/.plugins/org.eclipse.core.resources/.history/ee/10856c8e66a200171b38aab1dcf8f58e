@@ -1,0 +1,37 @@
+package parkingLot.com.parkingLot;
+
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
+public class AppTest {
+	ParkingLotUtil putil = new ParkingLotUtil();
+	CartoColorDictionary ccd = new CartoColorDictionary();
+
+	/*
+	 * testing create_parking_slot for zero , negative inputs and positive
+	 * inputs
+	 */
+	@Test
+	public void test_create_parking_lot() {
+		Assert.assertEquals(false, putil.createParkingLot(0));
+		Assert.assertEquals(true, putil.createParkingLot(8));
+		Assert.assertEquals(false, putil.createParkingLot(-1));
+	}
+
+	/*
+	 * testing getMinimumSlot function with input arguments calling
+	 * getMinimumslot before createParking should return -1 as no slot is
+	 * available. Then creating a parkingLot of size 4 and trying to
+	 * getMinimumSlot which should return 1
+	 */
+	@Test
+	public void test_getMinimumSlot() {
+		Assert.assertEquals(0, putil.getMinimumSlot());
+		Assert.assertEquals(true, putil.createParkingLot(4));
+		Assert.assertEquals(1, putil.getMinimumSlot());
+	
+
+	}
+
+}

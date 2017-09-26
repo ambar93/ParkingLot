@@ -3,48 +3,42 @@ package parkingLot.com.parkingLot;
 import java.util.List;
 
 public class ParkingLotUtil {
-	
-	//Create ParkingLot
-	
-	//Allot slot 
-	// getMinimumSlot()
-	// Allot(String carobj , slotId)
-	
-	
-	//Leave slot
-	// leave(slotId)
-	
-	//ListOfRegNums(String color)
-	
-	//getSlotId(String regNum)
-	
-	//getSlots(String color)
 	Car slots[] = null;
 	CartoColorDictionary ccd = new CartoColorDictionary();
 	
-	public void createParkingLot(int size){
+	public boolean createParkingLot(int size){
+		if(size<=0)
+			return false;
+		else{
 		slots = new Car[size+1];
+		return true;
+		}
 	}
 	
 	public int getMinimumSlot()
 	{
 		int i;
+		if(slots==null)
+			return -1;
+		else{
 		for( i = 1 ; i< slots.length;i++)
 		{
 			if(slots[i]== null)
 				break;
 		}
 		
-		if(i >= slots.length)
+		if(i >= slots.length )
 			return -1;
 		
 		else 
 			return i;
+		}
 	}
 	
 	public boolean Allot(String color ,String regNum , int slotId)
 	{
 		try{
+		
 		Car car = new Car(color,regNum,slotId);
 		slots[slotId] = car;
 		ccd.addIntoMap(car);
@@ -75,7 +69,6 @@ public class ParkingLotUtil {
 		
 			
 	}
-	//ListOfRegNums(String color)
 
 	public List<String> getListRegNo(String color)
 	{
@@ -110,13 +103,23 @@ public class ParkingLotUtil {
 		return slotlist;
 	}
 	
-	public void status()
-	{
+	public boolean status()
+	{	int i;
+		for( i=1;i<slots.length;i++)
+		{
+			if(slots[i]!=null)
+				break;
+		}
+		if(i==slots.length)
+			return false;
+		else{
 		System.out.println("Slot No."+"\tRegistration No.\tColour");
 		for(Car c : slots)
 		{
 			if(c != null)
 			System.out.println(c.getSlotId()+"\t\t"+c.getRegNum()+"\t\t"+c.getColor());
+		}
+		return true;
 		}
 	}
 	

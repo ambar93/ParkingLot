@@ -30,7 +30,14 @@ public class App {
     		   String inputs[]= sCurrentLine.split(" ");
     		   if(inputs[0].equals("create_parking_lot"))
     		   {
-    			   putil.createParkingLot(Integer.parseInt(inputs[1]));
+    			   if(putil.createParkingLot(Integer.parseInt(inputs[1]))){
+    				   System.out.println("Created a parking lot with "+inputs[1]+" slots");
+
+    			   }
+    			   else
+    			   {
+    				   System.out.println("Invalid slot size");
+    			   }
     			   
     		   }
     		   else if(inputs[0].equals("park"))
@@ -38,7 +45,11 @@ public class App {
     			   String regno = inputs[1];
     			   String color = inputs[2];
     			   int slotid = putil.getMinimumSlot();
-    			   if(slotid == -1 )
+    			   if(slotid==-1 && putil.slots==null)
+    			   {
+    				   System.out.println("Sorry, create a parking lot first");
+
+    			   }else if(slotid == -1 )
     			   {
     				   System.out.println("Sorry, parking lot is full");
     			   }
@@ -59,17 +70,23 @@ public class App {
     		   }
     		   else if(inputs[0].equals("status"))
     		   {
+    			   
     			   putil.status();
     		   }
     		   else if(inputs[0].equals("registration_numbers_for_cars_with_colour"))
     		   {
     			   List<String> listreg = putil.getListRegNo(inputs[1]);
     			   StringBuffer sb = new StringBuffer();
+    			   if(!listreg.isEmpty()){
     			   for(String l : listreg)
     			   {
     				   sb.append(l+", ");
     			   }
     			   System.out.println(sb.substring(0, sb.length()-2));
+    			   }
+    			   else{
+    				   System.out.println("No car is there for "+inputs[1] +" color");
+    			   }
     		   }
     		   else if(inputs[0].equals("slot_numbers_for_cars_with_colour"))
     		   {
@@ -80,6 +97,7 @@ public class App {
     				   sb.append(l+", ");
     			   }
     			   System.out.println(sb.substring(0, sb.length()-2));
+    			  
     		   }
     		   else if(inputs[0].equals("slot_number_for_registration_number"))
     		   {

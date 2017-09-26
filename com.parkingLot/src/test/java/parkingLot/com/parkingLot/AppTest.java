@@ -1,38 +1,120 @@
 package parkingLot.com.parkingLot;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
-    }
+import org.testng.annotations.Test;
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
-    }
+import junit.framework.Assert;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+public class AppTest {
+	ParkingLotUtil putil = new ParkingLotUtil();
+	CartoColorDictionary ccd = new CartoColorDictionary();
+
+	/*
+	 * testing create_parking_slot for zero , negative inputs and positive
+	 * inputs and testing getMinimumSlot function with input arguments calling
+	 * getMinimumslot before createParking should return -1 as no slot is
+	 * available. Then creating a parkingLot of size 4 and trying to
+	 * getMinimumSlot which should return 1
+	 * 
+	 */
+	@Test(priority = 1)
+	public void test_create_parking_lot_and_getMinimumSlot() {
+		Assert.assertEquals(false, putil.createParkingLot(0));
+		Assert.assertEquals(false, putil.createParkingLot(-1));
+		Assert.assertEquals(-1, putil.getMinimumSlot());
+		Assert.assertEquals(true, putil.createParkingLot(3));
+		Assert.assertEquals(1, putil.getMinimumSlot());
+	}
+
+	/*
+	 * The test case checks no car is alotted a slots if no slot has been
+	 * created and after the creation of parking lot , this test assigns three
+	 * cars to three slots and then checks it should not allow to assign more
+	 * cars as all slots are not free
+	 */
+	@Test(priority = 2)
+	public void test_allot_car() {
+		int slotId_1 = putil.getMinimumSlot();
+		Assert.assertEquals(true, putil.Allot("red", "KA-01-HH-1234", slotId_1));
+		int slotId_2 = putil.getMinimumSlot();
+		Assert.assertEquals(true, putil.Allot("blue", "KA-01-HH-4567", slotId_2));
+		int slotId_3 = putil.getMinimumSlot();
+		Assert.assertEquals(true, putil.Allot("red", "KA-01-HH-8910", slotId_3));
+		int slotId_0 = putil.getMinimumSlot();
+		Assert.assertEquals(false, putil.Allot("red", "KA-01-HH-1314", slotId_0));
+
+	}
+
+	/*
+	 * The test checks leave() returns false for a slotId greater than the size
+	 * of parking lot It then calls leave() for a slotId which has a car parked
+	 * and checks that it should return true and free a car at that slot , it
+	 * then calls getMinimum to check if that slot was actually freed
+	 */
+	@Test(priority = 3)
+	public void test_leave() {
+
+		Assert.assertEquals(false, putil.Leave(100));
+		Assert.assertEquals(true, putil.Leave(1));
+		Assert.assertEquals(1, putil.getMinimumSlot());
+
+	}
+
+	/*
+	 * testing registration_numbers_for_cars_with_colour(),It is checking it
+	 * should return null for a color which has no cars yet. and should return a
+	 * list of cars for a particular color
+	 * 
+	 */
+	@Test(priority = 4)
+	public void test_registration_numbers_for_cars_with_colour() {
+		List<String> carList = new ArrayList();
+		Assert.assertEquals(carList, ccd.getRegNo("pink"));
+		carList.add("KA-01-HH-8910");
+		Assert.assertEquals(carList, ccd.getRegNo("red"));
+	}
+	/*
+	 * The test_slot_numbers_for_cars_with_colour check the program returns an
+	 * empty list for color which has no slot/ no car and checks that the
+	 * program returns list of slot ids of car of the given color
+	 */
+
+	@Test(priority = 5)
+	public void test_slot_numbers_for_cars_with_colour() {
+		List<Integer> slotList = new ArrayList();
+		Assert.assertEquals(slotList, ccd.getSlotId("white"));
+		slotList.add(2);
+		Assert.assertEquals(slotList, ccd.getSlotId("blue"));
+
+	}
+
+	/*
+	 * The test test_slot_number_for_registration_number checks that the program
+	 * returns -1 for a registration number which is not in the parking lot and
+	 * returns the slotId of the passed registration number
+	 */
+	@Test(priority = 6)
+	public void test_slot_number_for_registration_number() {
+		Assert.assertEquals(-1, putil.getSlotId("KA-10-1111"));
+		Assert.assertEquals(2, putil.getSlotId("KA-01-HH-4567"));
+	}
+
+	/*
+	 * this test first prints the existing Slot, Registration No, Color of cars
+	 * in the parking lot and after all cars leave this function checks a
+	 * message No car is there is shown to the user
+	 */
+	@Test(priority = 7)
+	public void test_status() {
+		Assert.assertEquals(true, putil.status());
+
+		int slotId_0 = putil.getMinimumSlot();
+		Assert.assertEquals(true, putil.Allot("blue", "KA-01-HH-1314", slotId_0));
+		Assert.assertEquals(true, putil.Leave(1));
+		Assert.assertEquals(true, putil.Leave(2));
+		Assert.assertEquals(true, putil.Leave(3));
+		Assert.assertEquals(false, putil.status());
+	}
 }

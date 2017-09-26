@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="7" passed="7">
+  <reporter-output>
+  </reporter-output>
+  <suite name="ParingLot" duration-ms="72" started-at="2017-09-26T04:39:33Z" finished-at="2017-09-26T04:39:33Z">
+    <groups>
+    </groups>
+    <test name="test_create_parking_lot" duration-ms="72" started-at="2017-09-26T04:39:33Z" finished-at="2017-09-26T04:39:33Z">
+      <class name="parkingLot.com.parkingLot.AppTest">
+        <test-method status="PASS" signature="test_create_parking_lot_and_getMinimumSlot()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_create_parking_lot_and_getMinimumSlot" duration-ms="17" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_create_parking_lot_and_getMinimumSlot -->
+        <test-method status="PASS" signature="test_allot_car()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_allot_car" duration-ms="1" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_allot_car -->
+        <test-method status="PASS" signature="test_leave()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_leave" duration-ms="1" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_leave -->
+        <test-method status="PASS" signature="test_registration_numbers_for_cars_with_colour()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_registration_numbers_for_cars_with_colour" duration-ms="3" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_registration_numbers_for_cars_with_colour -->
+        <test-method status="PASS" signature="test_slot_numbers_for_cars_with_colour()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_slot_numbers_for_cars_with_colour" duration-ms="2" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_slot_numbers_for_cars_with_colour -->
+        <test-method status="PASS" signature="test_slot_number_for_registration_number()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_slot_number_for_registration_number" duration-ms="3" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_slot_number_for_registration_number -->
+        <test-method status="PASS" signature="test_status()[pri:0, instance:parkingLot.com.parkingLot.AppTest@2cb4c3ab]" name="test_status" duration-ms="3" started-at="2017-09-26T10:09:33Z" finished-at="2017-09-26T10:09:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_status -->
+      </class> <!-- parkingLot.com.parkingLot.AppTest -->
+    </test> <!-- test_create_parking_lot -->
+  </suite> <!-- ParingLot -->
+</testng-results>

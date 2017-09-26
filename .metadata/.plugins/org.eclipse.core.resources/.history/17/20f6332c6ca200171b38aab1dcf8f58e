@@ -1,0 +1,67 @@
+package parkingLot.com.parkingLot;
+
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
+public class AppTest {
+	ParkingLotUtil putil = new ParkingLotUtil();
+	CartoColorDictionary ccd = new CartoColorDictionary();
+
+	/*
+	 * testing create_parking_slot for zero , negative inputs and positive
+	 * inputs and testing getMinimumSlot function with input arguments calling
+	 * getMinimumslot before createParking should return -1 as no slot is
+	 * available. Then creating a parkingLot of size 4 and trying to
+	 * getMinimumSlot which should return 1
+	 
+	 */
+	@Test
+	public void test_create_parking_lot() {
+		Assert.assertEquals(false, putil.createParkingLot(0));
+		Assert.assertEquals(false, putil.createParkingLot(-1));
+		Assert.assertEquals(-1, putil.getMinimumSlot());
+		Assert.assertEquals(true, putil.createParkingLot(4));
+		Assert.assertEquals(1, putil.getMinimumSlot());
+	}
+	
+	/*
+	 * The test case checks no car is alotted a slots if no slot has been created and
+	 * after the creation of parking lot , this test assigns three cars to three slots
+	 and then checks it should not allow to assign more cars as all slots are not free
+	 */
+	@Test
+	public void test_allot_car(){
+		int slotId_NotFound= putil.getMinimumSlot();
+		Assert.assertEquals(false,putil.Allot("red"," KA-01-HH-1234",slotId_NotFound));
+		Assert.assertEquals(true, putil.createParkingLot(3));
+		int slotId_1= putil.getMinimumSlot();
+		Assert.assertEquals(true,putil.Allot("red"," KA-01-HH-1234",slotId_1));
+		int slotId_2= putil.getMinimumSlot();
+		Assert.assertEquals(true,putil.Allot("blue"," KA-01-HH-4567",slotId_2));
+		int slotId_3= putil.getMinimumSlot();
+		Assert.assertEquals(true,putil.Allot("red"," KA-01-HH-8910",slotId_3));
+		int slotId_0= putil.getMinimumSlot();
+		Assert.assertEquals(false,putil.Allot("red"," KA-01-HH-1314",slotId_0));
+		
+		
+	}
+	
+	
+	/*
+	 * The test checks leave() returns false for a slotId greater than the size of parking lot
+	 * It then calls leave() for a slotId which has a car parked and checks that it should return
+	 */
+	@Test
+	public void test_leave(){
+		
+		Assert.assertEquals(false, putil.Leave(100));
+		Assert.assertEquals(true, putil.Leave(1));
+		
+		
+
+		
+	}
+
+
+}

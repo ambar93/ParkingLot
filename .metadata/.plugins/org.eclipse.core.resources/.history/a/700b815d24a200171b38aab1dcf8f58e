@@ -1,0 +1,26 @@
+package parkingLot.com.parkingLot;
+
+import org.testng.annotations.Test;
+
+import junit.framework.Assert;
+
+public class AppTest {
+	ParkingLotUtil putil = new ParkingLotUtil();
+	CartoColorDictionary ccd= new CartoColorDictionary();
+	
+	/*
+	 * testing  create_parking_slot for zero , negative inputs
+	 */
+	@Test
+	public void test_create_parking_lot() {
+			Assert.assertEquals("", ccd.createParkingLot(0));
+		   putil.createParkingLot(8);
+		   putil.createParkingLot(-1);
+
+		   
+	     
+	   }
+	
+	
+
+}

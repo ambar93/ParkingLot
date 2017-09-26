@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ParingLot]">
+  <test name="test_create_parking_lot(failed)">
+    <classes>
+      <class name="parkingLot.com.parkingLot.AppTest">
+        <methods>
+          <include name="test_status"/>
+        </methods>
+      </class> <!-- parkingLot.com.parkingLot.AppTest -->
+    </classes>
+  </test> <!-- test_create_parking_lot(failed) -->
+</suite> <!-- Failed suite [ParingLot] -->

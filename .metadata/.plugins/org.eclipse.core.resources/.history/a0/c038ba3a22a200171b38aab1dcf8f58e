@@ -1,0 +1,16 @@
+package parkingLot.com.parkingLot;
+
+
+
+
+public class AppTest {
+	
+	@Test
+	public void testCalculateAppriasal() {
+		   
+	     
+	   }
+	
+	
+
+}

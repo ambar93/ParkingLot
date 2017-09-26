@@ -1,0 +1,8 @@
+package parkingLot.com.parkingLot;
+
+public class Snippet {
+	public static void main(String[] args) {
+		AppTest
+	}
+}
+
