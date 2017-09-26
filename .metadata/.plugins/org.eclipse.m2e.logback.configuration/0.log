@@ -1304,3 +1304,7 @@
 2017-09-26 10:09:07,821 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amaini\ParkingLot\ParkingLot\com.parkingLot\src\main\resources
 2017-09-26 10:09:07,821 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-09-26 10:09:07,821 [Worker-242] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amaini\ParkingLot\ParkingLot\com.parkingLot\src\test\resources
+2017-09-26 11:59:25,766 [Worker-261] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-26 11:59:25,766 [Worker-261] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amaini\ParkingLot\ParkingLot\com.parkingLot\src\main\resources
+2017-09-26 11:59:25,767 [Worker-261] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-09-26 11:59:25,767 [Worker-261] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\amaini\ParkingLot\ParkingLot\com.parkingLot\src\test\resources
