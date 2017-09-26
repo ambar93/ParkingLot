@@ -104,14 +104,22 @@ public class ParkingLotUtil {
 	}
 	
 	public boolean status()
-	{	int i;
+	{
+		if(slots==null) {
+			System.out.println("Create Slot first");
+			return false;
+
+		}
+		int i;
 		for( i=1;i<slots.length;i++)
 		{
 			if(slots[i]!=null)
 				break;
 		}
-		if(i==slots.length)
+		if(i==slots.length) {
+			System.out.println("All slots are empty");
 			return false;
+		}
 		else{
 		System.out.println("Slot No."+"\tRegistration No.\tColour");
 		for(Car c : slots)
