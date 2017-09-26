@@ -30,7 +30,7 @@ README.md
 
 The source code of the project lies in com.parkingLot folder. The file **input.txt** is used to give input to the program.<br> 
 You can modify the contents of this file or replace this file to run test cases you wish to test.(Make sure your **input file is present in the root directory**)<br>
-The shell script file **parking_lot** is the file that willbe used to run the project. It contains commands to take input from user, compile, build, test and run the project.<br>
+The shell script file **parking_lot** is the file that will be used to run the project. It contains commands to take input from user, compile, build, test and run the project.<br>
 
 # Installing 
 To run the Parking Lot Project,following should be present in the system
