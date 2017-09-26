@@ -7,10 +7,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
+
 public class App {
 
 	public static void display(String input,ParkingLotUtil putil)
@@ -56,15 +53,21 @@ public class App {
 				}
 				System.out.println(sb.substring(0, sb.length() - 2));
 			} else {
-				System.out.println("No car is there for " + inputs[1] + " color");
+				System.out.println("Not found");
 			}
 		} else if (inputs[0].equals("slot_numbers_for_cars_with_colour")) {
 			List<Integer> listnum = putil.getSlots(inputs[1]);
 			StringBuffer sb = new StringBuffer();
-			for (Integer l : listnum) {
-				sb.append(l + ", ");
+			if(!listnum.isEmpty()) {
+				for (Integer l : listnum) {
+					sb.append(l + ", ");
+				}
+				System.out.println(sb.substring(0, sb.length() - 2));
 			}
-			System.out.println(sb.substring(0, sb.length() - 2));
+			else
+			{
+				System.out.println("Not found");
+			}
 
 		} else if (inputs[0].equals("slot_number_for_registration_number")) {
 			int slotid = putil.getSlotId(inputs[1]);

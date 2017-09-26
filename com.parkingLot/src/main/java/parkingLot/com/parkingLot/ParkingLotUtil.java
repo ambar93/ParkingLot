@@ -84,18 +84,19 @@ public class ParkingLotUtil {
 
 	public int getSlotId(String regNum)
 	{
-		for(Car c : slots)
-		{
-			if(c != null)
-			{
-				String num = c.getRegNum();
-				if(regNum.equals(num))
-				{
-					return c.getSlotId();
+		if(slots == null)
+			return -1;
+		else {
+			for (Car c : slots) {
+				if (c != null) {
+					String num = c.getRegNum();
+					if (regNum.equals(num)) {
+						return c.getSlotId();
+					}
 				}
 			}
+			return -1;
 		}
-		return -1;
 	}
 	//getSlots(String color)
 	
