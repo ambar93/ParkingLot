@@ -1,6 +1,7 @@
 package parkingLot.com.parkingLot;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
@@ -19,8 +20,10 @@ public class App {
     	  try {
 
     	 //  Scanner sc = new Scanner(System.in);
-    	   String file = "C://Users//amaini//Desktop//input.txt";
-    	   fr = new FileReader(file);
+
+    	   String file = File.separator+"home"+File.separator+"ubuntu"+File.separator+"Desktop"+File.separator+"parkingLot"+File.separator+"input.txt";
+
+			  fr = new FileReader(file);
     	   br = new BufferedReader(fr);
 
     	   String sCurrentLine;
