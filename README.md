@@ -5,10 +5,11 @@ The project also lets one know in which slot a car is parked, the overall status
 
 # Getting Started
 The following instructions will give detailed list of steps to execute the program on your machine.
-The given project takes two forms of input and based on the input given by the user, the program is either interactive or reads from a given file. Refer to Running section, to know how to run the project.
+The given project takes two forms of input and based on the input given by the user, the program is either interactive or reads from a given file. Refer to Running section, to know how to run the project. Refer Project Structure Section to know how the project has been designed
 
 # Prerequistes
-To run the project on your local machine, you need to download the Zip folder or clone the project with the following command
+To run the project on your local machine, you need to download the Zip folder or clone the project with the following command.
+
 git clone https://github.com/ambar93/ParkingLot.git
 
 The following command will create a folder with following stucture in the directory where you cloned/unzipped the folder
@@ -28,7 +29,7 @@ parking_lot
 README.md
 
 The source code of the project lies in com.parkingLot folder. The file input.txt is used to give input to the program. You can modify the contents of this file to run test cases you wish to test. The shell script file parking_lot is the file that will
-be used to run the project. It contains commands to take input from user,compile,build,test and run the project.
+be used to run the project. It contains commands to take input from user, compile, build, test and run the project.
 
 # Installing 
 To run the Parking Lot Project,following should be present in the system
@@ -67,7 +68,7 @@ For interactive mode
 
 command to run - ./parking_lot
 
-This command will execute the shell script. It will compile, build,test and run the code.
+This command will execute the shell script. It will compile, build, test and run the code.
 
 # Testing 
 The parking_lot shell script runs the test by the command mvn test. These tests cover the functionality of the project.
@@ -79,4 +80,4 @@ The given project has mainclass called **App.java**. This file is responsible of
 
 The utility class called **parkingUtil.java** has all the functions implemented in it. These functions are called by App.java on basis of input passed by the user.
 **We have made a seperate java file called CartoColorDictionary.java . This file basically maintains a hashmap with key as color and value as list of car objects. Though I could have got slot numbers/ registration numbers that belong to a particular color even without a ColorToCardictionary but, the searching time will be very high. So here a seperate class called ColorToCarDictionary which will
-add and remove and list ids of a particular color.**
+add and remove and list ids of a particular color.This makes querying easy.**
