@@ -28,9 +28,9 @@ parking_lot
 
 README.md
 
-The source code of the project lies in com.parkingLot folder. The file **input.txt** is used to give input to the program. 
-You can modify the contents of this file or replace this file to run test cases you wish to test.(Make sure your **input file is present in the root directory**)
-The shell script file **parking_lot** is the file that willbe used to run the project. It contains commands to take input from user, compile, build, test and run the project.
+The source code of the project lies in com.parkingLot folder. The file **input.txt** is used to give input to the program.<br> 
+You can modify the contents of this file or replace this file to run test cases you wish to test.(Make sure your **input file is present in the root directory**)<br>
+The shell script file **parking_lot** is the file that willbe used to run the project. It contains commands to take input from user, compile, build, test and run the project.<br>
 
 # Installing 
 To run the Parking Lot Project,following should be present in the system
@@ -76,16 +76,15 @@ command to run - ./parking_lot
 This command will execute the shell script. It will compile, build, test and run the code.
 
 # Testing 
-The parking_lot shell script runs the test by the command mvn test. These tests cover the functionality of the project.
-Testng is used to write the test cases.These test cases run on all the functions, asserting the given and expected 
-output.
+The parking_lot shell script runs the test by the command mvn test. These tests cover the functionality of the project.<br>
+Testng is used to write the test cases.These test cases run on all the functions, asserting the given and expected output.
 
 # Project Structure
-The given project has mainclass called **App.java**. This file is responsible of taking input from user and then calling the appropriate functions. 
+The given project has mainclass called **App.java**. This file is responsible of taking input from user and then calling the appropriate functions.<br> 
 Apart from App.java, the **Apptest.java** is the file where test cases are written.These test cases are run using testng.xml. 
-The project contains a java file named **Car.java**. The file acts as a model for Car, with color, slot and registration number as data members. 
-I kept slot as a data member since each car will be assoicated with a slot number.
+The project contains a java file named **Car.java**. The file acts as a model for Car, with color, slot and registration number as data members.<br> 
+I kept slot as a data member since each car will be assoicated with a slot number.<br>
 
-The utility class called **ParkingUtil.java** has all the functions implemented in it. These functions are called by App.java on basis of input passed by the user.
-I have made a seperate java file called **CartoColorDictionary.java** . This file basically maintains a hashmap with key as color and value as list of car objects. 
-Though I could have got slot numbers/ registration numbers that belong to a particular color even without a ColorToCardictionary but, the searching time will be very high. So here a seperate class called ColorToCarDictionary which will add and remove and list ids of a particular color.This makes querying easy.
+The utility class called **ParkingUtil.java** has all the functions implemented in it. These functions are called by App.java on basis of input passed by the user.<br>
+I have made a seperate java file called **CartoColorDictionary.java** . This file basically maintains a hashmap with key as color and value as list of car objects.<br> 
+Though I could have got slot numbers/ registration numbers that belong to a particular color even without a ColorToCardictionary but, the searching time will be very high. So here a seperate class called ColorToCarDictionary which will add and remove and list ids of a particular color.This makes querying easy.<br>
