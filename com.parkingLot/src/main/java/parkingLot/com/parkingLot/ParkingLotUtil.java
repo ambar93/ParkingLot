@@ -53,9 +53,11 @@ public class ParkingLotUtil {
 	
 	public boolean Leave(int slotId)
 	{
+		if(slots == null)
+			return false;
+
 		if(slotId > slots.length)
 			return false;
-		
 		else if(slots[slotId]==null)
 			return true;
 		
